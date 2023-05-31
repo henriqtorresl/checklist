@@ -8,11 +8,14 @@ import { MatListModule } from '@angular/material/list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AdicionarTarefaDialogComponent } from './components/dialogs/adicionar-tarefa-dialog/adicionar-tarefa-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChecklistComponent
+    ChecklistComponent,
+    AdicionarTarefaDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatListModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
