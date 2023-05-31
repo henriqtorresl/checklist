@@ -1,0 +1,9 @@
+<mat-selection-list #tarefas>
+    <mat-list-option *ngFor="let tarefa of listaDeTarefas">
+        {{ tarefa }}
+    </mat-list-option>
+</mat-selection-list>
+
+<p>
+    Options selected: {{tarefas.selectedOptions.selected.length}}
+</p>
