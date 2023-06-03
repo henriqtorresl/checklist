@@ -20,7 +20,7 @@ export class ChecklistComponent implements OnInit {
   // método que abre o dialog:
   addTarefa():void {
     const dialogRef = this.dialog.open(AdicionarTarefaDialogComponent, {
-      width: '250px'
+      width: '550px'
     });
 
     dialogRef.afterClosed().subscribe(result => {

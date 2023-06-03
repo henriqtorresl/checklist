@@ -1,5 +1,8 @@
-<h1 mat-dialog-title>Olá Henrique</h1>
+<h1 mat-dialog-title>Adicionar tarefa</h1>
 <div mat-dialog-actions>
+    <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Adicionar uma terefa no checklist..."></textarea>
+    </mat-form-field>
     <button mat-button (click)="cancel()">Cancelar</button>
     <button mat-button (click)="adicionar()">Adicionar</button>
 </div>
