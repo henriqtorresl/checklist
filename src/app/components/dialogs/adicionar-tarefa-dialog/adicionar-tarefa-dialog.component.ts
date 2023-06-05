@@ -7,7 +7,7 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./adicionar-tarefa-dialog.component.scss']
 })
 export class AdicionarTarefaDialogComponent {
-  
+
   constructor(
     private dialogRef: MatDialogRef<AdicionarTarefaDialogComponent>,
   ) {}
@@ -20,6 +20,7 @@ export class AdicionarTarefaDialogComponent {
 
   adicionar(): void {
     console.log('Adicionei');
+    
     this.dialogRef.close();
   }
 

@@ -8,7 +8,7 @@ import { AdicionarTarefaDialogComponent } from '../dialogs/adicionar-tarefa-dial
   styleUrls: ['./checklist.component.scss']
 })
 export class ChecklistComponent implements OnInit {
-  listaDeTarefas: string[] = ['Estudar', 'Cagar'];
+  listaDeTarefas: string[] = ['Estudar', 'Ler', 'Ir para a academia', 'Passear com o cachorro'];
 
   // injeção de depndências
   constructor(public dialog: MatDialog) {}
