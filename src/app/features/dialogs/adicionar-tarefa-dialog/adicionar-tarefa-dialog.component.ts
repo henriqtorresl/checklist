@@ -9,11 +9,11 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class AdicionarTarefaDialogComponent implements OnInit {
 
   constructor(
-    public dialogRef: MatDialogRef<AdicionarTarefaDialogComponent>
+    private dialogRef: MatDialogRef<AdicionarTarefaDialogComponent>
   ) {}
 
   ngOnInit(): void {
-    
+
   }
 
   fechar(): void {

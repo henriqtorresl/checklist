@@ -8,12 +8,16 @@ import { ChecklistComponent } from './features/checklist/checklist.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './shared/app-material/app-material.module';
+import { TopBarComponent } from './shared/top-bar/top-bar.component';
+import { BottomBarComponent } from './shared/bottom-bar/bottom-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ChecklistComponent
+    ChecklistComponent,
+    TopBarComponent,
+    BottomBarComponent
   ],
   imports: [
     BrowserModule,

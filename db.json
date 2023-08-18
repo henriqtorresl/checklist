@@ -1,12 +1,16 @@
 {
   "tarefa": [
     {
-      "nome": "tarefa teste",
-      "descricao": "descrição legal"
+      "id": 1,
+      "nome": "Tarefa teste",
+      "descricao": "Descrição legal",
+      "realizada": false
     },
     {
-      "nome": "tarefa teste 2",
-      "descricao": "descrição legal 2"
+      "id": 2,
+      "nome": "Tarefa teste 2",
+      "descricao": "Descrição legal 2",
+      "realizada": false
     }
   ]
 }

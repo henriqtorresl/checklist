@@ -1,19 +1,33 @@
 <div class="flex-container">
     
-    <div class="flex-item">
-        <!--Esse botão vai abrir um dialog que vai ser responsável por adicionar tarefas no checklist-->
-        <button (click)="abrirDialog()">Abrir dialog</button>
-    </div>
-    
     <div *ngIf="tarefas.length != 0 else semTarefas">
         <ul class="flex-item" *ngFor="let tarefa of this.tarefas">
-            <!--Esse botão vai ser responsável por marcar se uma tarefa foi realizada ou não-->
-            <li class="item">{{ tarefa.descricao }}<button>X</button></li>
+            <li class="item" (click)="mudarStatus(tarefa)" *ngIf="tarefa.realizada == false else tarefaRealizada">
+                <input matTooltip="marcar tarefa como feita" class="input-checkbox" type="checkbox">
+                {{ tarefa.descricao }}
+            </li> 
+            <ng-template #tarefaRealizada>
+                <li class="item" (click)="mudarStatus(tarefa)">
+                    <input matTooltip="desmarcar tarefa" checked class="input-checkbox" type="checkbox">
+                    <del>{{ tarefa.descricao }}</del>
+                </li> 
+            </ng-template>
         </ul>
     </div>
 
     <ng-template #semTarefas>
         <p>Você não possui tarefas pendentes no seu checklist, clique no botão acima para adicionar tarefas</p>
     </ng-template>
+
+    <div class="flex-button">
+        <!--Esse botão vai abrir um dialog que vai ser responsável por adicionar tarefas no checklist-->
+        <button 
+            matTooltip="adicionar tarefa" 
+            mat-button
+            (click)="abrirDialog()"
+        >
+            Adicionar tarefa
+        </button>
+    </div>
 
 </div>

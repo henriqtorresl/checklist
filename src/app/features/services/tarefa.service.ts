@@ -17,4 +17,16 @@ export class TarefaService {
     return this.httpClient.get<Tarefa[]>(this.api);
   }
 
+  adicionarTarefa(tarefa: Tarefa): Observable<Tarefa> {
+    return this.httpClient.post<Tarefa>(this.api, tarefa);
+  }
+
+  atualizarTarefa(tarefa: Tarefa): Observable<Tarefa> {
+    return this.httpClient.put<Tarefa>(this.api, tarefa);
+  }
+
+  excluirTarefa(idTarefa: number): Observable<Tarefa> {
+    return this.httpClient.delete<Tarefa>(`${this.api}/${idTarefa}`);
+  }
+
 }

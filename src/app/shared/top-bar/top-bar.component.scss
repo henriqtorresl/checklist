@@ -1,0 +1,17 @@
+.flex-container {
+    background-color: rgb(79, 122, 112);
+    display: flex;
+    flex-direction: row;
+}
+
+.title {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+}
