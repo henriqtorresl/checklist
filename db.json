@@ -1,19 +1,12 @@
 {
-  "posts": [
+  "tarefa": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "nome": "tarefa teste",
+      "descricao": "descrição legal"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "nome": "tarefa teste 2",
+      "descricao": "descrição legal 2"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
