@@ -1,1 +1,19 @@
-<p>checklist works!</p>
+<div class="flex-container">
+    
+    <div class="flex-item">
+        <!--Esse botão vai abrir um dialog que vai ser responsável por adicionar tarefas no checklist-->
+        <button (click)="abrirDialog()">Abrir dialog</button>
+    </div>
+    
+    <div *ngIf="tarefas.length != 0 else semTarefas">
+        <ul class="flex-item" *ngFor="let tarefa of this.tarefas">
+            <!--Esse botão vai ser responsável por marcar se uma tarefa foi realizada ou não-->
+            <li class="item">{{ tarefa.descricao }}<button>X</button></li>
+        </ul>
+    </div>
+
+    <ng-template #semTarefas>
+        <p>Você não possui tarefas pendentes no seu checklist, clique no botão acima para adicionar tarefas</p>
+    </ng-template>
+
+</div>
