@@ -1,13 +1,18 @@
 <h1 mat-dialog-title>Adicionar Tarefa</h1>
 <div mat-dialog-content>
-    <form>
+    <form [formGroup]="this.formTarefa">
           <mat-form-field>
-            <mat-label>Textarea</mat-label>
-            <textarea matInput></textarea>
+            <p>Nome:</p>
+            <input type="text" placeholder="Adicione um nome" formControlName="nome">
+          </mat-form-field>
+
+          <mat-form-field>
+            <p>Descrição:</p>
+            <input type="text" placeholder="Adicione uma descrição" formControlName="descricao">
           </mat-form-field>
     </form>
 </div>
 <div mat-dialog-actions>
     <button mat-button (click)="fechar()">Fechar</button>
-    <button mat-button>Salvar</button>
+    <button mat-button (click)="salvar()">Salvar</button>
 </div>

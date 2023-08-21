@@ -16,19 +16,20 @@ export class ChecklistComponent implements OnInit {
 
   constructor(
     private dialog: MatDialog,
-    private tarefaService: TarefaService
+    private tarefaService: TarefaService,
   ) {}
 
   ngOnInit(): void {
   }
 
   abrirDialog(): void {
-    const dialogRef = this.dialog.open(AdicionarTarefaDialogComponent, {
-      // dados que possivelmente serão passados..
-    });
+    const dialogRef = this.dialog.open(AdicionarTarefaDialogComponent, { });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe(tarefa => {
       console.log('dialog foi fechado!');
+      if (tarefa !== undefined) {
+        this.tarefas.push(tarefa);    // atualizando o dataSource
+      }
     });
   }
 

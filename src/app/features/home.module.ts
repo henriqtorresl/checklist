@@ -5,6 +5,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AdicionarTarefaDialogComponent } from './dialogs/adicionar-tarefa-dialog/adicionar-tarefa-dialog.component';
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { AppMaterialModule } from '../shared/app-material/app-material.module';
     CommonModule,
     HomeRoutingModule,
     HttpClientModule,
-    AppMaterialModule
+    AppMaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class HomeModule { }

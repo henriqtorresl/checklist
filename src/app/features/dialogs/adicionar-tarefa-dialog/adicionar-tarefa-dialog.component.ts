@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Tarefa } from 'src/app/models/tarefa.model';
+import { TarefaService } from '../../services/tarefa.service';
+import { take, tap } from 'rxjs';
 
 @Component({
   selector: 'app-adicionar-tarefa-dialog',
@@ -8,16 +12,47 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class AdicionarTarefaDialogComponent implements OnInit {
 
+  formTarefa!: FormGroup
+
   constructor(
-    private dialogRef: MatDialogRef<AdicionarTarefaDialogComponent>
+    private dialogRef: MatDialogRef<AdicionarTarefaDialogComponent>,
+    private formBuilder: FormBuilder,
+    private tarefaService: TarefaService
   ) {}
 
   ngOnInit(): void {
 
+    this.criarFormulario();
+
+  }
+
+  criarFormulario(): void {
+    this.formTarefa = this.formBuilder.group({
+      nome: ['', Validators.required],
+      descricao: ['', Validators.required]
+    });
   }
 
   fechar(): void {
     this.dialogRef.close();
+  }
+
+  salvar(): void {
+    const novaTarefa: Tarefa = {
+      nome: this.formTarefa.controls['nome'].value,
+      descricao: this.formTarefa.controls['descricao'].value,
+      realizada: false
+    }
+
+    console.log('Nova tarefa: ', novaTarefa);
+
+    this.tarefaService.adicionarTarefa(novaTarefa).pipe(
+      take(1),
+      tap((tarefa) => {
+        console.log(tarefa);
+        this.dialogRef.close(tarefa);
+      })
+    ).subscribe();
   }
 
 }
