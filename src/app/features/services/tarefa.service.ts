@@ -22,11 +22,11 @@ export class TarefaService {
   }
 
   atualizarTarefa(tarefa: Tarefa): Observable<Tarefa> {
-    return this.httpClient.put<Tarefa>(this.api, tarefa);
+    return this.httpClient.put<Tarefa>(`${this.api}/${tarefa.id}` , tarefa);
   }
 
-  excluirTarefa(idTarefa: number): Observable<Tarefa> {
-    return this.httpClient.delete<Tarefa>(`${this.api}/${idTarefa}`);
+  excluirTarefa(tarefa: Tarefa): Observable<Tarefa> {
+    return this.httpClient.delete<Tarefa>(`${this.api}/${tarefa.id}`);
   }
 
 }
