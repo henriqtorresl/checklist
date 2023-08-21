@@ -7,15 +7,24 @@
                 {{ tarefa.nome }}
             </li>
 
-            <li class="item-checkbox" (click)="mudarStatus(tarefa)" *ngIf="tarefa.realizada == false else tarefaRealizada">
+            <li 
+                class="item-checkbox" 
+                matTooltip="marcar tarefa como feita"  
+                (click)="mudarStatus(tarefa)" 
+                *ngIf="tarefa.realizada == false else tarefaRealizada"
+            >
                 <p>Descrição: </p>
-                <input matTooltip="marcar tarefa como feita" class="input-checkbox" type="checkbox">
+                <input class="input-checkbox" type="checkbox">
                 {{ tarefa.descricao }}
             </li> 
             <ng-template #tarefaRealizada>
-                <li class="item-checkbox" (click)="mudarStatus(tarefa)">
+                <li 
+                    class="item-checkbox" 
+                    matTooltip="desmarcar tarefa"
+                    (click)="mudarStatus(tarefa)"
+                >
                     <p>Descrição:</p>
-                    <input matTooltip="desmarcar tarefa" checked class="input-checkbox" type="checkbox">
+                    <input checked class="input-checkbox" type="checkbox">
                     <del>{{ tarefa.descricao }}</del>
                 </li> 
             </ng-template>
