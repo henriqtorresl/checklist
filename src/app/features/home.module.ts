@@ -6,11 +6,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdicionarTarefaDialogComponent } from './dialogs/adicionar-tarefa-dialog/adicionar-tarefa-dialog.component';
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditarTarefaDialogComponent } from './dialogs/editar-tarefa-dialog/editar-tarefa-dialog.component';
 
 
 @NgModule({
   declarations: [
-    AdicionarTarefaDialogComponent
+    AdicionarTarefaDialogComponent,
+    EditarTarefaDialogComponent
   ],
   imports: [
     CommonModule,
