@@ -3,7 +3,7 @@
     <div *ngIf="tarefas.length != 0 else semTarefas">
         <ul class="flex-item" *ngFor="let tarefa of this.tarefas">
             <li class="item">
-                <p>Nome: </p>
+                <h2>Nome </h2>
                 {{ tarefa.nome }}
             </li>
 
@@ -13,7 +13,7 @@
                 (click)="mudarStatus(tarefa)" 
                 *ngIf="tarefa.realizada == false else tarefaRealizada"
             >
-                <p>Descrição: </p>
+                <h2>Descrição </h2>
                 <input class="input-checkbox" type="checkbox">
                 {{ tarefa.descricao }}
             </li> 
@@ -23,14 +23,22 @@
                     matTooltip="desmarcar tarefa"
                     (click)="mudarStatus(tarefa)"
                 >
-                    <p>Descrição:</p>
+                    <h2>Descrição</h2>
                     <input checked class="input-checkbox" type="checkbox">
                     <del>{{ tarefa.descricao }}</del>
                 </li> 
             </ng-template>
 
             <li class="item">
-                Ação:
+                <h2>Ação </h2>
+                <div class="botoes">
+                    <button matTooltip="editar tarefa">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button matTooltip="excluir tarefa">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
             </li>
         </ul>
     </div>

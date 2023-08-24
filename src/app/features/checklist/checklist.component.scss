@@ -15,7 +15,7 @@
 .flex-item {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-around;
     margin: 10px;
     border: 1px solid #000;
 }
@@ -33,16 +33,26 @@
 
 .item {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin: 10px;
     list-style-type: none;
+    h2 {
+        margin: 5px;
+        color: white;
+    }
 }
 
 .item-checkbox {
     display: flex;
-    flex-direction: row;
-    margin: 10px;
+    flex-direction: column;
+    padding: 5px;
     list-style-type: none;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    h2 {
+        margin: 10px;
+        color: white;
+    }
 }
 
 .item-checkbox:hover {
@@ -53,8 +63,27 @@
 
 .input-checkbox {
     margin: 5px;
+    display: none;
 }
 
 .input-checkbox:hover {
     cursor: pointer;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: row;
+    color: white;
+
+    button {
+        background-color: rgb(79, 122, 112);
+        border: none;
+        padding: 5px;
+    }
+
+    button:hover {
+        cursor: pointer;
+        background-color: rgb(75, 114, 105);
+        border-radius: 5px;
+    }
 }

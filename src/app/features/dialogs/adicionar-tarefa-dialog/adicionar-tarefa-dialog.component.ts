@@ -41,7 +41,7 @@ export class AdicionarTarefaDialogComponent implements OnInit {
     const novaTarefa: Tarefa = {
       nome: this.formTarefa.controls['nome'].value,
       descricao: this.formTarefa.controls['descricao'].value,
-      realizada: false
+      realizada: false    // toda tarefa adicionada tem que vir com esse campo == false
     }
 
     console.log('Nova tarefa: ', novaTarefa);
