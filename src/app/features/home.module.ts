@@ -7,12 +7,14 @@ import { AdicionarTarefaDialogComponent } from './dialogs/adicionar-tarefa-dialo
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditarTarefaDialogComponent } from './dialogs/editar-tarefa-dialog/editar-tarefa-dialog.component';
+import { DeletarTarefaDialogComponent } from './dialogs/deletar-tarefa-dialog/deletar-tarefa-dialog.component';
 
 
 @NgModule({
   declarations: [
     AdicionarTarefaDialogComponent,
-    EditarTarefaDialogComponent
+    EditarTarefaDialogComponent,
+    DeletarTarefaDialogComponent
   ],
   imports: [
     CommonModule,

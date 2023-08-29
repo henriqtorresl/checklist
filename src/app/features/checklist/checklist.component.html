@@ -1,6 +1,6 @@
 <div class="flex-container">
     
-    <div *ngIf="tarefas.length != 0 else semTarefas">
+    <div>
         <ul class="flex-item" *ngFor="let tarefa of this.tarefas">
             <li class="item">
                 <h2>Nome </h2>
@@ -32,10 +32,16 @@
             <li class="item">
                 <h2>Ação </h2>
                 <div class="botoes">
-                    <button matTooltip="editar tarefa">
+                    <button 
+                        matTooltip="editar tarefa"
+                        (click)="abrirDialogEditar()"
+                    >
                         <mat-icon>edit</mat-icon>
                     </button>
-                    <button matTooltip="excluir tarefa">
+                    <button 
+                        matTooltip="excluir tarefa"
+                        (click)="abrirDialogDeletar()"
+                    >
                         <mat-icon>delete</mat-icon>
                     </button>
                 </div>
@@ -43,9 +49,9 @@
         </ul>
     </div>
 
-    <ng-template #semTarefas>
+    <div *ngIf="this.tarefas.length === 0">
         <p>Você não possui tarefas pendentes no seu checklist, clique no botão acima para adicionar tarefas</p>
-    </ng-template>
+    </div>
 
     <div class="flex-button">
         <!--Esse botão vai abrir um dialog que vai ser responsável por adicionar tarefas no checklist-->

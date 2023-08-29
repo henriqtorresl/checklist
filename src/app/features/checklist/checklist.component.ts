@@ -4,6 +4,8 @@ import { Tarefa } from 'src/app/models/tarefa.model';
 import { AdicionarTarefaDialogComponent } from '../dialogs/adicionar-tarefa-dialog/adicionar-tarefa-dialog.component';
 import { TarefaService } from '../services/tarefa.service';
 import { take, tap } from 'rxjs';
+import { EditarTarefaDialogComponent } from '../dialogs/editar-tarefa-dialog/editar-tarefa-dialog.component';
+import { DeletarTarefaDialogComponent } from '../dialogs/deletar-tarefa-dialog/deletar-tarefa-dialog.component';
 
 @Component({
   selector: 'app-checklist',
@@ -20,17 +22,34 @@ export class ChecklistComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
   }
 
   abrirDialog(): void {
     const dialogRef = this.dialog.open(AdicionarTarefaDialogComponent, { });
 
-    dialogRef.afterClosed().subscribe(tarefa => {
+    dialogRef.afterClosed().subscribe((tarefa: Tarefa) => {
       console.log('dialog foi fechado!');
       if (tarefa !== undefined) {
         this.tarefas.push(tarefa);    // atualizando o dataSource
       }
     });
+  }
+
+  abrirDialogEditar(): void {
+    const dialogRef = this.dialog.open(EditarTarefaDialogComponent, {});
+
+    dialogRef.afterClosed().subscribe(() => {
+      console.log('dialog foi fechado!');
+    })
+  }
+
+  abrirDialogDeletar(): void {
+    const dialogRef = this.dialog.open(DeletarTarefaDialogComponent, {});
+
+    dialogRef.afterClosed().subscribe(() => {
+      console.log('dialog foi fechado!');
+    })
   }
 
   mudarStatus(tarefa: Tarefa): void {
