@@ -7,7 +7,7 @@ Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli
 - Após clonado, instale as dependências do 'node_package' com o comando `npm install`.
 - Após isso o projeto pode ser executado...
 - Para rodar a aplicação: `ng serve` ou `npm start`
-- Para rodar a API: `json-server --watch db.json`
+- Para rodar a API: `npx json-server --watch db.json`
 
 ### Observações
 - Por padrão o projeto ira rodar em `http://localhost:4200/`
