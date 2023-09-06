@@ -1,1 +1,8 @@
-<p>deletar-tarefa-dialog works!</p>
+<h1 matDialogTitle>Excluir Tarefa</h1>
+<div matDialogContent>
+    <h3>Deseja excluir a tarefa: "{{ this.data.nome }}"?</h3>
+</div>
+<div matDialogActions>
+    <button mat-button (click)="cancelar()">Fechar</button>
+    <button mat-button color="warn" (click)="deletar()">Excluir</button>
+</div>

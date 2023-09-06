@@ -25,8 +25,8 @@ export class TarefaService {
     return this.httpClient.put<Tarefa>(`${this.api}/${tarefa.id}` , tarefa);
   }
 
-  excluirTarefa(tarefa: Tarefa): Observable<Tarefa> {
-    return this.httpClient.delete<Tarefa>(`${this.api}/${tarefa.id}`);
+  excluirTarefa(tarefa: Tarefa): Observable<any> {
+    return this.httpClient.delete<any>(`${this.api}/${tarefa.id}`);
   }
 
 }
