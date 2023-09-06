@@ -55,4 +55,15 @@ export class AdicionarTarefaDialogComponent implements OnInit {
     ).subscribe();
   }
 
+  desabilitar(): boolean {
+    if (
+      this.formTarefa.controls['nome'].value != '' &&
+      this.formTarefa.controls['descricao'].value != ''
+    ) {
+      return false;   
+    } else {
+      return true;
+    }
+  }
+
 }

@@ -36,6 +36,17 @@
 </div>
 
 <div matDialogActions>
-    <button mat-button (click)="fechar()">Fechar</button>
-    <button mat-button (click)="salvar()">Salvar</button>
+    <button 
+        mat-button 
+        (click)="fechar()"
+    >
+        Cancelar
+    </button>
+    <button 
+        mat-button 
+        (click)="salvar()"
+        [disabled]="desabilitar()"
+    >
+        Salvar
+    </button>
 </div>

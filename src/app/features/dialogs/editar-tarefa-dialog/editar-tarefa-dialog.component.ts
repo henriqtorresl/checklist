@@ -1,4 +1,3 @@
-import { Dialog, DialogRef } from '@angular/cdk/dialog';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
@@ -56,6 +55,14 @@ export class EditarTarefaDialogComponent implements OnInit {
       this.dialogRef.close('editada');
     } else {
       this.dialogRef.close();
+    }
+  }
+
+  desabilitar(): boolean {
+    if (this.formTarefa.dirty) {  // se o formulário foi alterado eu não quero desablitiar o botão (então retorno false)... se ele não foi alterado eu quero desabilitar, então retorno true
+      return false;
+    } else {
+      return true;
     }
   }
 
