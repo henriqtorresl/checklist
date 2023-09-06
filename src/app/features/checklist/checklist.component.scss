@@ -18,6 +18,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 800px;
+    // height: 400px;
 }
 
 .flex-item {
@@ -76,6 +78,11 @@
 
 .input-checkbox:hover {
     cursor: pointer;
+}
+
+.paginator {
+    margin: 5px;
+    background-color:rgb(79, 122, 112);
 }
 
 .botoes {

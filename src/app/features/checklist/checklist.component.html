@@ -1,7 +1,7 @@
 <div class="flex-container">
     
     <div>
-        <ul class="flex-item" *ngFor="let tarefa of this.tarefas">
+        <ul class="flex-item" *ngFor="let tarefa of this.tarefasFiltradas">
             <li class="item">
                 <h2>Nome </h2>
                 {{ tarefa.nome }}
@@ -47,6 +47,14 @@
                 </div>
             </li>
         </ul>
+
+        <mat-paginator 
+            class="paginator"
+            [length]="this.tarefas.length" 
+            [pageSizeOptions]="[4]" 
+            (page)="mostrarTarefas($event)"
+        >
+        </mat-paginator>
     </div>
 
     <div *ngIf="this.tarefas.length == 0" class="sem-tarefas">
