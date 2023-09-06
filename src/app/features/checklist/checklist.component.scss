@@ -3,6 +3,14 @@
     padding: 0;
 }
 
+.sem-tarefas {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .flex-container {
     background-color: rgb(79, 122, 112);
     border-radius: 10px;

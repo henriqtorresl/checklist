@@ -49,19 +49,22 @@ export class ChecklistComponent implements OnInit {
         if (retorno == 'editada') {
           location.reload()
         }
-
-        console.log('dialog foi fechado!');
       }),
       take(1)
     ).subscribe()
   }
 
-  abrirDialogDeletar(): void {
-    const dialogRef = this.dialog.open(DeletarTarefaDialogComponent, {});
+  abrirDialogDeletar(tarefa: Tarefa): void {
+    const dialogRef = this.dialog.open(DeletarTarefaDialogComponent, {
+      data: tarefa
+    });
 
     dialogRef.afterClosed().pipe(
-      tap(() => {
-        console.log('dialog foi fechado!');
+      tap((retorno) => {
+        console.log(retorno);
+        if (retorno == 'deletada') {
+          location.reload();
+        }
       }),
       take(1)
     ).subscribe()

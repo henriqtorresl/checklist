@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
         // Lógica para lidar com os dados recebidos
         this.tarefas = tarefas;
         console.log(this.tarefas);
+        console.log(this.tarefas.length);
       }),
       catchError((error) => {
         // Lógica para lidar com erros
