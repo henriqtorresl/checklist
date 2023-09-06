@@ -1,0 +1,17 @@
+h1 {
+    background-color: rgb(75, 114, 105);
+}
+
+button:hover {
+    background-color: rgb(75, 114, 105);
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 50px 10px 50px;    /* topo | direita | inferior | esquerda */
+}
+
+.campo {
+    margin: 10px;
+}

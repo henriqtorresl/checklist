@@ -28,28 +28,41 @@ export class ChecklistComponent implements OnInit {
   abrirDialogAdicionar(): void {
     const dialogRef = this.dialog.open(AdicionarTarefaDialogComponent, {});
 
-    dialogRef.afterClosed().subscribe((tarefa: Tarefa) => {
-      console.log('dialog foi fechado!');
-      if (tarefa !== undefined) {
-        this.tarefas.push(tarefa);    // atualizando o dataSource
-      }
-    });
+    dialogRef.afterClosed().pipe(
+      tap((tarefa: Tarefa) => {
+        console.log('dialog foi fechado!');
+        if (tarefa !== undefined) {
+          this.tarefas.push(tarefa);    // atualizando o dataSource
+        }
+      }),
+      take(1)
+    ).subscribe();
   }
 
-  abrirDialogEditar(): void {
-    const dialogRef = this.dialog.open(EditarTarefaDialogComponent, {});
+  abrirDialogEditar(tarefa: Tarefa): void {
+    const dialogRef = this.dialog.open(EditarTarefaDialogComponent, {
+      data: tarefa
+    });
 
-    dialogRef.afterClosed().subscribe(() => {
-      console.log('dialog foi fechado!');
-    })
+    dialogRef.afterClosed().pipe(
+      tap(() => {
+        // FALTA ATUALIZAR O DATASOURCE DEPOIS QUE A QUESTÃO FOI EDITADA!
+
+        console.log('dialog foi fechado!');
+      }),
+      take(1)
+    ).subscribe()
   }
 
   abrirDialogDeletar(): void {
     const dialogRef = this.dialog.open(DeletarTarefaDialogComponent, {});
 
-    dialogRef.afterClosed().subscribe(() => {
-      console.log('dialog foi fechado!');
-    })
+    dialogRef.afterClosed().pipe(
+      tap(() => {
+        console.log('dialog foi fechado!');
+      }),
+      take(1)
+    ).subscribe()
   }
 
   mudarStatus(tarefa: Tarefa): void {
