@@ -24,13 +24,12 @@ export class ChecklistComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
+  
   abrirDialogAdicionar(): void {
     const dialogRef = this.dialog.open(AdicionarTarefaDialogComponent, {});
 
     dialogRef.afterClosed().pipe(
       tap((tarefa: Tarefa) => {
-        console.log('dialog foi fechado!');
         if (tarefa !== undefined) {
           this.tarefas.push(tarefa);    // atualizando o dataSource
         }
@@ -45,8 +44,11 @@ export class ChecklistComponent implements OnInit {
     });
 
     dialogRef.afterClosed().pipe(
-      tap(() => {
-        // FALTA ATUALIZAR O DATASOURCE DEPOIS QUE A QUESTÃO FOI EDITADA!
+      tap((retorno) => {
+        console.log(retorno);
+        if (retorno == 'editada') {
+          location.reload()
+        }
 
         console.log('dialog foi fechado!');
       }),

@@ -52,7 +52,11 @@ export class EditarTarefaDialogComponent implements OnInit {
       take(1)
     ).subscribe();
 
-    this.dialogRef.close();
+    if (this.formTarefa.dirty) {    // se o formulário foi alterado faça isso:
+      this.dialogRef.close('editada');
+    } else {
+      this.dialogRef.close();
+    }
   }
 
 }
