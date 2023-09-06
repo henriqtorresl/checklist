@@ -16,7 +16,7 @@ import { PageEvent } from '@angular/material/paginator';
 export class ChecklistComponent implements OnInit, AfterViewInit {
 
   @Input() tarefas: Tarefa[] = [];
-  tarefasFiltradas: Tarefa[] = [];
+  tarefasFiltradas: Tarefa[] = [];    // lista usada para auxiliar na lógica do paginator
 
   constructor(
     private dialog: MatDialog,
@@ -26,6 +26,7 @@ export class ChecklistComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
   }
   
+  // depois que o componente foi carregado:
   ngAfterViewInit(): void {
     this.tarefas.forEach((tarefa, index) => {
       if (index < 4) {
@@ -43,6 +44,7 @@ export class ChecklistComponent implements OnInit, AfterViewInit {
       tap((tarefa: Tarefa) => {
         if (tarefa !== undefined) {
           this.tarefas.push(tarefa);    // atualizando o dataSource
+          location.reload();  // força o reload da página
         }
       }),
       take(1)

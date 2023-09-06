@@ -4,7 +4,7 @@
 }
 
 .sem-tarefas {
-    margin: 10px;
+    margin: 40px 10px 10px 10px; /* topo | direita | inferior | esquerda */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,7 +19,6 @@
     justify-content: center;
     align-items: center;
     width: 800px;
-    // height: 400px;
 }
 
 .flex-item {

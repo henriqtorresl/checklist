@@ -1,100 +1,40 @@
 {
   "tarefa": [
     {
-      "nome": "teste",
-      "descricao": "teste",
-      "realizada": true,
+      "nome": "Parque",
+      "descricao": "Ir ao parque, fazer um cardio",
+      "realizada": false,
+      "id": 1
+    },
+    {
+      "nome": "Academia",
+      "descricao": "Ir a academia, treinar perna",
+      "realizada": false,
+      "id": 2
+    },
+    {
+      "nome": "Faculdade",
+      "descricao": "Ir para a aula de Cálculo 2 na faculdade, às 10hrs",
+      "realizada": false,
       "id": 3
     },
     {
-      "id": 4,
-      "nome": "tarefa testeeeeee legal",
-      "descricao": "teste bacana do henrique bacana do balacobaco",
-      "realizada": true
+      "nome": "Lavar o carro",
+      "descricao": "Levar o carro no lava-jato sexta-feita às 15hrs",
+      "realizada": false,
+      "id": 4
     },
     {
-      "id": 5,
-      "nome": "teste",
-      "descricao": "teste do legal",
-      "realizada": true
+      "nome": "Comprar presente",
+      "descricao": "Comprar presente para o aniversário surpresa do Manuel Gomes",
+      "realizada": false,
+      "id": 5
     },
     {
-      "nome": "testandooo",
-      "descricao": "testandooo",
+      "nome": "Dia dos namorados",
+      "descricao": "Levar a namorada para o Outback, para comemorarmos o dia dos namorados, show de bola!",
       "realizada": false,
       "id": 6
-    },
-    {
-      "nome": "ultimo",
-      "descricao": "ultimo teste",
-      "realizada": true,
-      "id": 7
-    },
-    {
-      "nome": "teste",
-      "descricao": "teste",
-      "realizada": false,
-      "id": 8
-    },
-    {
-      "nome": "sdfsdafafsd",
-      "descricao": "sdafasdfsdf",
-      "realizada": false,
-      "id": 9
-    },
-    {
-      "nome": "sdfasfdasdf",
-      "descricao": "sfadsdfasdfa",
-      "realizada": false,
-      "id": 10
-    },
-    {
-      "nome": "asdfasdfasdf",
-      "descricao": "aaaaaaaaaaaaaaaaaaaaaaa",
-      "realizada": true,
-      "id": 11
-    },
-    {
-      "nome": "aaaaaaaaaaaaaaa",
-      "descricao": "bbbbbbbbbb",
-      "realizada": false,
-      "id": 12
-    },
-    {
-      "nome": "cccccc",
-      "descricao": "dddddddddd",
-      "realizada": false,
-      "id": 13
-    },
-    {
-      "nome": "dddddddddd",
-      "descricao": "eeeeeeeeeeeeee",
-      "realizada": true,
-      "id": 14
-    },
-    {
-      "nome": "fffffffffffffff",
-      "descricao": "ggggggggggggggggg",
-      "realizada": false,
-      "id": 15
-    },
-    {
-      "nome": "hhhhhhhhhh",
-      "descricao": "iiiiiiiiiiiii",
-      "realizada": false,
-      "id": 16
-    },
-    {
-      "nome": "jjjjjjjjjjj",
-      "descricao": "kkkkkkkkkkkkkkkk",
-      "realizada": false,
-      "id": 17
-    },
-    {
-      "nome": "kkkkkkkkkkkkk",
-      "descricao": "voce é bacana cara",
-      "realizada": true,
-      "id": 18
     }
   ]
 }
