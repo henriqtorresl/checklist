@@ -25,8 +25,8 @@ export class ChecklistComponent implements OnInit {
 
   }
 
-  abrirDialog(): void {
-    const dialogRef = this.dialog.open(AdicionarTarefaDialogComponent, { });
+  abrirDialogAdicionar(): void {
+    const dialogRef = this.dialog.open(AdicionarTarefaDialogComponent, {});
 
     dialogRef.afterClosed().subscribe((tarefa: Tarefa) => {
       console.log('dialog foi fechado!');
