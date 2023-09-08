@@ -3,16 +3,8 @@
     padding: 0;
 }
 
-.sem-tarefas {
-    margin: 40px 10px 10px 10px; /* topo | direita | inferior | esquerda */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .flex-container {
-    background-color: rgb(79, 122, 112);
+    background-color:rgb(79, 122, 112);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -21,12 +13,49 @@
     width: 800px;
 }
 
-.flex-item {
+.div-lista {
+    margin: 35px 0 0 0;   /* topo | direita | inferior | esquerda */
+    width: 100%;
+}
+
+.lista {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 10px;
-    border: 1px solid #000;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.item-lista {
+    list-style-type: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.titulo-tarefa {
+    margin: 5px;
+    span {
+        color: white;
+    }
+}
+
+.checkbox {
+    p {
+        padding-top: 10px;
+        font-size: 18px;
+    }
+}
+
+.botao {
+    background-color:rgb(79, 122, 112);
+    cursor: pointer;
+    border: 0px;
+}
+
+.sem-tarefas {
+    margin: 40px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .flex-button {
@@ -36,68 +65,12 @@
     margin: 0 15px 10px 0;
 
     button {
-        background-color: rgb(75, 114, 105);
+        background-color:rgb(75, 114, 105);
     }
-}
-
-.item {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-    list-style-type: none;
-    h2 {
-        margin: 5px;
-        color: white;
-    }
-}
-
-.item-checkbox {
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    list-style-type: none;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
-    h2 {
-        margin: 10px;
-        color: white;
-    }
-}
-
-.item-checkbox:hover {
-    cursor: pointer;
-    background-color: rgb(104, 150, 138);
-    border-radius: 5px;
-}
-
-.input-checkbox {
-    margin: 5px;
-    display: none;
-}
-
-.input-checkbox:hover {
-    cursor: pointer;
 }
 
 .paginator {
     margin: 5px;
     background-color:rgb(79, 122, 112);
-}
-
-.botoes {
-    display: flex;
-    flex-direction: row;
-    color: white;
-
-    button {
-        background-color: rgb(79, 122, 112);
-        border: none;
-        padding: 5px;
-    }
-
-    button:hover {
-        cursor: pointer;
-        background-color: rgb(75, 114, 105);
-        border-radius: 5px;
-    }
+    width: 100%;
 }

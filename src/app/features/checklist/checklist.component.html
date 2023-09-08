@@ -1,51 +1,65 @@
 <div class="flex-container">
     
-    <div>
-        <ul class="flex-item" *ngFor="let tarefa of this.tarefasFiltradas">
-            <li class="item">
-                <h2>Nome </h2>
-                {{ tarefa.nome }}
+    <div class="div-lista">
+        <ul 
+            class="lista"
+            *ngFor="let tarefa of tarefasFiltradas"
+        >
+            <li 
+                class="item-lista"  
+                *ngIf="tarefa.realizada == false else tarefaRealizada"
+                (click)="mudarStatus(tarefa)"
+            >
+                <h3 class="titulo-tarefa">
+                    <span>Nome da Tarefa: </span>{{tarefa.nome}}
+                </h3>
+
+                <mat-checkbox 
+                    class="checkbox"    
+                    matTooltip="marcar tarefa como feita"
+                >
+                    <p>{{ tarefa.descricao}}</p>
+                </mat-checkbox>
             </li>
 
-            <li 
-                class="item-checkbox" 
-                matTooltip="marcar tarefa como feita"  
-                (click)="mudarStatus(tarefa)" 
-                *ngIf="tarefa.realizada == false else tarefaRealizada"
-            >
-                <h2>Descrição </h2>
-                <input class="input-checkbox" type="checkbox">
-                {{ tarefa.descricao }}
-            </li> 
             <ng-template #tarefaRealizada>
                 <li 
-                    class="item-checkbox" 
-                    matTooltip="desmarcar tarefa"
-                    (click)="mudarStatus(tarefa)"
+                    class="item-lista"
+                    (click)="mudarStatus(tarefa)"    
                 >
-                    <h2>Descrição</h2>
-                    <input checked class="input-checkbox" type="checkbox">
-                    <del>{{ tarefa.descricao }}</del>
+                    <h3 class="titulo-tarefa">
+                        <span>Nome da Tarefa: </span>{{tarefa.nome}}
+                    </h3>
+
+                    <mat-checkbox 
+                        color="warn"
+                        class="checkbox"
+                        checked
+                        matTooltip="desmarcar tarefa"
+                    >
+                        <p><del>{{tarefa.descricao}}</del></p>
+                    </mat-checkbox>
                 </li> 
             </ng-template>
 
-            <li class="item">
-                <h2>Ação </h2>
-                <div class="botoes">
-                    <button 
-                        matTooltip="editar tarefa"
-                        (click)="abrirDialogEditar(tarefa)"
-                    >
-                        <mat-icon>edit</mat-icon>
-                    </button>
-                    <button 
-                        matTooltip="excluir tarefa"
-                        (click)="abrirDialogDeletar(tarefa)"
-                    >
-                        <mat-icon>delete</mat-icon>
-                    </button>
-                </div>
-            </li>
+            <div>
+                <button 
+                    class="botao"
+                    matTooltip="editar tarefa"
+                    (click)="abrirDialogEditar(tarefa)"
+                >
+                    <mat-icon>edit</mat-icon>
+                </button>
+            
+                <button 
+                    class="botao"
+                    matTooltip="excluir tarefa"
+                    (click)="abrirDialogDeletar(tarefa)"
+                >
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+
         </ul>
 
         <!--Se o usuário não possuir tarefas mostro essa mensagem:-->
@@ -53,6 +67,8 @@
             <p>Você não possui tarefas pendentes no seu checklist...</p>
             <p>Clique no botão abaixo para adicionar tarefas!</p>
         </div>
+    
+    </div>
 
         <!--Se o usuário não possuir tarefas não mostro o paginator-->
         <mat-paginator
@@ -63,8 +79,6 @@
             (page)="mostrarTarefas($event)"
         >
         </mat-paginator>
-    
-    </div>
 
     <div class="flex-button">
         <!--Esse botão vai abrir um dialog que vai ser responsável por adicionar tarefas no checklist-->
